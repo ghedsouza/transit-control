@@ -18,5 +18,6 @@ urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("ping/", hello.views.ping, name="ping"),
+    path("github/", hello.views.github, name="github"),
     path("admin/", admin.site.urls),
 ]
