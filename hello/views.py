@@ -9,11 +9,15 @@ def index(request):
     return render(request, "index.html")
 
 
-def db(request):
+def ping(request):
+    if request.POST:
+        print(f"xxx POST: {request.POST}.")
+    else:
+        print(f"xxx GET: {request.build_absolute_uri()}.")
+    return HttpResponse('pong')
 
+def db(request):
     greeting = Greeting()
     greeting.save()
-
     greetings = Greeting.objects.all()
-
     return render(request, "db.html", {"greetings": greetings})
