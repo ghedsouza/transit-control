@@ -15,7 +15,6 @@ def index(request):
 import functools
 
 def requires_github_hmac(view_func):
-
     @functools.wraps(view_func)
     def wrapper(request):
         authenticate_github_webhook_request(request)
